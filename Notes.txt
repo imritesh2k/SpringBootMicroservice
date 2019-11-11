@@ -1,0 +1,22 @@
+spring-boot-microservice-forex-service >> Main Service
+spring-boot-microservice-currency-conversion >> client service
+
+# Eureka Server
+http://localhost:8761/
+
+# Request 1
+http://localhost:8100/currency-converter/feign/from/EUR/to/INR/quantity/10000
+
+#Request 2
+http://localhost:8100/currency-converter/feign/from/EUR/to/INR/quantity/10000
+
+# Route the request through API gateway
+http://localhost:8765/{application-name}/{uri}
+
+#NOTE : If we dont give the server API Gateway details then it will not rout through the api gateway
+http://localhost:8765/currency-conversion-service/currency-converter/feign/from/EUR/to/INR/quantity/10000
+
+So, here right now we need to provide the explicitively the api gateway url to request to go through it, we can omit this with bit modifixcation in our client application controller
+
+
+
